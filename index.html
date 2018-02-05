@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JSON</title>
+</head>
+<body>
+	<script src="./JSON.js"></script>
+	<script>
+		const json = `
+			{
+				"id": 1,
+				"name": "yucong",
+				"age": 24,
+				"company": "Tencent",
+				"friends": [
+					{
+						"id": 2,
+						"name": "zhouzhichuang"
+					},
+					{
+						"id": 3,
+						"name": "hepengfei"
+					}
+				]
+			}
+		`
+
+		// FIXME 解析速度超慢，比JSON.parse慢100倍
+		console.time('t')
+		for (let i = 0; i < 1; i ++) {
+			// JSON.parse(json)
+			console.log(JSONParser(json))
+		}
+		console.timeEnd('t')
+	</script>
+</body>
+</html>
